@@ -1,0 +1,306 @@
+.collapsible {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: "\003E";
+  color: white;
+  font-weight: bold;
+  float: left;
+  margin-right: 20px;
+  transform: rotate(90deg);
+}
+
+.active:after {
+  content: "\003E";
+  transform: rotate(-90deg);
+}
+
+.content {
+  display: none;
+  padding: 10px 20px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+}
+
+.tankTable {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tankTable th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  padding-left: 0px;
+  font-size: 18px;
+}
+
+.tankTable td {
+  border: solid 1px;
+}
+
+.tankTable input {
+  border: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
+.tankTable div {
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.previousDayTotal {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 5px;
+  margin-bottom: 5px;
+}
+
+.shaftCounter div {
+  width: 300px;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.tank {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  background: white;
+  position: relative;
+  display: block;
+  margin: 10px;
+  z-index: 1;
+}
+
+.transferLog {
+  background-color: #f1f1f1;
+  width: 1040px;
+  text-align: center;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 400px 220px 520px;
+  grid-template-columns: 400px 220px 520px;
+  width: 1140px;
+  margin-bottom: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.grid-item h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 30px;
+}
+
+.grid-item label {
+  display: inline-block;
+  width: 50px;
+  font-size: 18px;
+}
+.grid-item input {
+  width: 100px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+fieldset {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px black solid;
+  width: 150px;
+  padding: 10px;
+}
+
+fieldset legend {
+  border: 1px black solid;
+  text-align: center;
+  width: 75%;
+}
+
+/* The container */
+.checkmarkContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkmarkContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #a3a3a3;
+}
+
+/* On mouse-over, add a grey background color */
+.checkmarkContainer:hover input ~ .checkmark {
+  background-color: #555;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkmarkContainer input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkmarkContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmarkContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkmarkGroup {
+  display: inline-block;
+  margin-left: 10%;
+}
+
+.checkmarkGroup h1 {
+  text-align: left;
+  font-size: 20px;
+}
+
+.checkmarkGroup label {
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+}
+
+.nonEditBox {
+  display: inline-block;
+  border: 1px black solid;
+  width: 60px;
+  height: 18px;
+  font-size: 18px;
+  padding: 2px;
+  text-align: center;
+}
+
+.estimates {
+  width: 450px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.estimates div {
+  margin-bottom: 5px;
+}
+
+.estimates label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+
+.estimates input {
+  width: 60px;
+  height: 18px;
+  font-size: 18px;
+  padding: 2px;
+  text-align: center;
+}
+
+.logTextField {
+  width: 95%;
+  text-align: left;
+  padding: 1px 2px;
+  border: none;
+}
+
+.logTextField legend {
+  width: 50%;
+}
+
+.logTextBox {
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#transfersContainer {
+  margin-bottom: 10px;
+}
+
+.deleteButton {
+  padding: 8px;
+  font-size: 16px;
+  color: red;
+}
+
+.transferButtonGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80px 1500px;
+  grid-template-columns: 80px auto;
+}

@@ -1,7 +1,7 @@
 {
     "theme_color": "#4b5788",
     "background_color": "#12225f",
-    "display": "browser",
+    "display": "fullscreen",
     "start_url": "/Ultimate3AETool/index.html",
     "name": "Ulimate 3AE Tool",
     "short_name": "3AE Tool",

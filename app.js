@@ -1,4 +1,4 @@
 // Registering Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
-}
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/Ultimate3AETool/service-worker.js', {scope: '/Ultimate3AETool/'})
+  }

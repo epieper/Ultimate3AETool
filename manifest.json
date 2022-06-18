@@ -1,14 +1,31 @@
 {
-    "start_url": "https://epieper.github.io/Ultimate3AETool",
-    "name": "My Sample PWA",
-    "lang": "en-us",
-    "short_name": "SamplePWA",
-  	"description": "A sample PWA for testing purposes",
-    "display": "fullscreen",
-    "theme_color": "#3B5FA7",
-    "background_color": "#173369",
-    "orientation": "any",
+    "theme_color": "#4b5788",
+    "background_color": "#12225f",
+    "display": "browser",
+    "scope": "/Ultimate3AETool/",
+    "start_url": "/Ultimate3AETool/index.html",
+    "name": "Ulimate 3AE Tool",
+    "short_name": "3AE Tool",
     "icons": [
-        
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
     ]
 }

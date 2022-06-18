@@ -7,7 +7,8 @@ var URLS = [                            // Add URL you want to cache in this lis
   '/Ultimate3AETool/app.js',
   '/Ultimate3AETool/offline.html',
   '/Ultimate3AETool/manifest.json',
-  '/Ultimate3AETool/style.css'
+  '/Ultimate3AETool/style.css',
+  '/Ultimate3AETool/icons/'
 ];
 
 // Respond with cached resources

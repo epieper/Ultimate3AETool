@@ -2,18 +2,17 @@
     "theme_color": "#4b5788",
     "background_color": "#12225f",
     "display": "browser",
-    "scope": "/Ultimate3AETool/",
     "start_url": "/Ultimate3AETool/index.html",
     "name": "Ulimate 3AE Tool",
     "short_name": "3AE Tool",
     "icons": [
         {
-            "src": "/icons/android-chrome-192x192.png",
+            "src": "/Ultimate3AETool/icons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icons/android-chrome-512x512.png",
+            "src": "/Ultimate3AETool/icons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

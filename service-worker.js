@@ -4,8 +4,9 @@ var CACHE_NAME = APP_PREFIX + VERSION;
 var URLS = [                            // Add URL you want to cache in this list.
   '/Ultimate3AETool/',                     // If you have separate JS/CSS files,
   '/Ultimate3AETool/index.html',            // add path to those files here
-	'/Ultimate3AETool/app.js',
-	'/Ultimate3AETool/offline.html'
+  '/Ultimate3AETool/app.js',
+  '/Ultimate3AETool/offline.html',
+  '/Ultimate3AETool/manifest.json'
 ];
 
 // Respond with cached resources

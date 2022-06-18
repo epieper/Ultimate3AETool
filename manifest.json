@@ -3,27 +3,27 @@
     "background_color": "#12225f",
     "display": "browser",
     "scope": "/Ultimate3AETool/",
-    "start_url": "/Ultimate3AETool/index.html",
+    "start_url": "/index.html",
     "name": "Ulimate 3AE Tool",
     "short_name": "3AE Tool",
     "icons": [
         {
-            "src": "/Ultimate3AETool/icons/icon-192x192.png",
+            "src": "/icons/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/Ultimate3AETool/icons/icon-256x256.png",
+            "src": "/icons/icon-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/Ultimate3AETool/icons/icon-384x384.png",
+            "src": "/icons/icon-384x384.png",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "/Ultimate3AETool/icons/icon-512x512.png",
+            "src": "/icons/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

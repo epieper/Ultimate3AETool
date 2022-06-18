@@ -4,7 +4,6 @@
     "lang": "en-us",
     "short_name": "SamplePWA",
   	"description": "A sample PWA for testing purposes",
-    "start_url": "/index.html",
     "display": "fullscreen",
     "theme_color": "#3B5FA7",
     "background_color": "#173369",

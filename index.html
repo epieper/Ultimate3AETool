@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+<html lang="en" >
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="180x180" href="/Ultimate3AETool/icons/apple-touch-icon.png">
@@ -10,8 +10,595 @@
     <link rel="manifest" href="/Ultimate3AETool/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <script src="app.js" defer></script>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<input type="file" id="myFileInput" onchange="init(event)" accept=".xlsx, .xls" />
+<br>
+<br>
+<a id="testA">"Excel Test Text Here"</a>
+<br>
+<br>
+
+<button type="button" class="collapsible">Transfers</button>
+<div id="transfers" class="content">
+	<div id="transfersContainer">
+
+	</div>
+	<button type="button" id="addTransfer" onclick="addTransfer()">Add Transfer</button>
+</div>
+
+<button type="button" class="collapsible">Shaft</button>
+<div id="shaft" class="content">
+	<table class="tankTable">
+		<tr class="shaftCounter">
+			<th>
+				<div>Previous Day Shaft Counter @ Noon</div>
+			</th>
+			<td>
+				<div class="previousDayTotal" style="width:200px;">20</div>
+			</td>
+		</tr>
+		<tr class="shaftCounter">
+			<th>
+				<div>Today Shaft Counter @ Noon</div>
+			</th>
+			<td><input type="number" class="todayShaftCounter" style="width:200px;"></td>
+		</tr>
+		<tr class="shaftCounter">
+			<th>
+				<div>Total Revolutions</div>
+			</th>
+			<td>
+				<div class="totalRevolutions" style="width:200px;"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<button type="button" class="collapsible">Fuel</button>
+<div id="fuel" class="content">
+	<div class="previousDayTotal" style="margin-left:130px;">
+		<label>Previous Day Total @ Noon</label>
+		<div class="nonEditBox" style="width: 100px;">100</div> gal
+	</div>
+	<table class="tankTable">
+		<tr>
+			<th></th>
+			<th>
+				<div>6-134-1</div>
+			</th>
+			<th>
+				<div>6-134-2</div>
+			</th>
+			<th>
+				<div>Subtotal</div>
+			</th>
+			<th>
+				<div>Received</div>
+			</th>
+			<th>
+				<div>Used</div>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<div>12 x 16</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>16 x 20</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>20 x 24</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>00 x 04</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>04 x 08</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<button type="button" class="collapsible">Potable</button>
+<div id="potable" class="content">
+	<div class="previousDayTotal" style="margin-left:343px;">
+		<label>Previous Day Total @ Noon</label>
+		<div class="nonEditBox" style="width: 100px;"></div>gal
+	</div>
+	<table class="tankTable">
+		<tr>
+			<th>
+				<div></div>
+			</th>
+			<th>
+				<div>8-123-1</div>
+			</th>
+			<th>
+				<div>8-123-2</div>
+			</th>
+			<th>
+				<div>7-134-1</div>
+			</th>
+			<th>
+				<div>7-134-2</div>
+			</th>
+			<th>
+				<div>Subtotal</div>
+			</th>
+			<th>
+				<div>Received</div>
+			</th>
+			<th>
+				<div>Used</div>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<div>12 x 16</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>16 x 20</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>20 x 24</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>00 x 04</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>04 x 08</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<button type="button" class="collapsible">Feedwater</button>
+<div id="feedwater" class="content">
+	<div class="previousDayTotal" style="margin-left:130px;">
+		<label>Previous Day Total @ Noon</label>
+		<div class="nonEditBox" style="width: 100px;"></div>gal
+	</div>
+	<table class="tankTable">
+		<tr>
+			<th>
+				<div></div>
+			</th>
+			<th>
+				<div>8-127-1</div>
+			</th>
+			<th>
+				<div>8-127-2</div>
+			</th>
+			<th>
+				<div>Subtotal</div>
+			</th>
+			<th>
+				<div>Received</div>
+			</th>
+			<th>
+				<div>Used</div>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<div>12 x 16</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>16 x 20</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>20 x 24</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>00 x 04</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<div>04 x 08</div>
+			</th>
+			<td><input type="number" class="tankLevel"></td>
+			<td><input type="number" class="tankLevel"></td>
+			<td>
+				<div class="subtotal"></div>
+			</td>
+			<td><input type="number" class="received"></td>
+			<td>
+				<div class="used"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<button type="button" class="collapsible">Consumption</button>
+<div id="consumption" class="content">
+
+</div>
+
+<script id="transferTemplate" type="text/html">
+	<div id="clonedTransfer">
+		<div class="transferButtonGrid">
+			<button type="button" class="deleteButton" onclick="deleteTransfer(this)" style="-ms-grid-column: 1;-ms-grid-row: 1;">Delete</button>
+			<button type="button" class="collapsible" style="-ms-grid-column: 2;-ms-grid-row: 1;">Transfer</button>
+		</div>
+		<div class="content">
+			<div class="grid-container">
+				<div class="grid-item" style="-ms-grid-column: 1;-ms-grid-row: 1; border-bottom:none;">
+					<h1 style="text-align:center;">Shifted Suction</h1>
+					<label>Time</label>
+					<input type="text" class="suctionTime" maxlength="4" oninput="handleTransferInput(this)" placeholder="optional">
+					<br>
+					<label>Level</label>
+					<input type="number" class="suctionLevel" oninput="handleTransferInput(this)" placeholder="optional">
+				</div>
+				<div class="grid-item" style="-ms-grid-column: 2;-ms-grid-row: 1; border-bottom:none;">
+					<h1>Aligned to Fill</h1>
+					<label>Time</label>
+					<input type="text" class="fillTime" maxlength="4" oninput="handleTransferInput(this)">
+					<br>
+					<label>Level</label>
+					<input type="number" class="fillLevel" oninput="handleTransferInput(this)">
+				</div>
+				<div class="grid-item" style="-ms-grid-column: 3;-ms-grid-row: 1; border-bottom:none;">
+					<h1>Final</h1>
+					<label>Time</label>
+					<input type="text" class="finalTime" maxlength="4" oninput="handleTransferInput(this)">
+					<br>
+					<label>Level</label>
+					<input type="number" class="finalLevel" oninput="handleTransferInput(this)">
+				</div>
+				<div class="grid-item" style="-ms-grid-column: 1;-ms-grid-row: 2; border-top:none;">
+					<fieldset>
+						<legend>From</legend>
+						<div class="checkmarkGroup">
+							<h1>Fuel</h1>
+							<label class="checkmarkContainer">6-134-1
+								<input type="checkbox" name="suctionFrom" value="6-134-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">6-134-2
+								<input type="checkbox" name="suctionFrom" value="6-134-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="checkmarkGroup">
+							<h1>Potable</h1>
+							<label class="checkmarkContainer">8-123-1
+								<input type="checkbox" name="suctionFrom" value="8-123-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">8-123-2
+								<input type="checkbox" name="suctionFrom" value="8-123-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">7-134-1
+								<input type="checkbox" name="suctionFrom" value="7-134-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">7-134-2
+								<input type="checkbox" name="suctionFrom" value="7-134-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="checkmarkGroup">
+							<h1>Feedwater</h1>
+							<label class="checkmarkContainer">8-127-1
+								<input type="checkbox" name="suctionFrom" value="8-127-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">8-127-2
+								<input type="checkbox" name="suctionFrom" value="8-127-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>To</legend>
+						<div class="checkmarkGroup">
+							<h1>Fuel</h1>
+							<label class="checkmarkContainer">6-134-1
+								<input type="checkbox" name="suctionTo" value="6-134-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">6-134-2
+								<input type="checkbox" name="suctionTo" value="6-134-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="checkmarkGroup">
+							<h1>Potable</h1>
+							<label class="checkmarkContainer">8-123-1
+								<input type="checkbox" name="suctionTo" value="8-123-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">8-123-2
+								<input type="checkbox" name="suctionTo" value="8-123-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">7-134-1
+								<input type="checkbox" name="suctionTo" value="7-134-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">7-134-2
+								<input type="checkbox" name="suctionTo" value="7-134-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="checkmarkGroup">
+							<h1>Feedwater</h1>
+							<label class="checkmarkContainer">8-127-1
+								<input type="checkbox" name="suctionTo" value="8-127-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">8-127-2
+								<input type="checkbox" name="suctionTo" value="8-127-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<div class="grid-item" style="-ms-grid-column: 2;-ms-grid-row: 2; border-top:none;">
+					<fieldset>
+						<legend>Fill</legend>
+						<div class="checkmarkGroup">
+							<h1>Fuel</h1>
+							<label class="checkmarkContainer">6-134-1
+								<input type="checkbox" name="fill" value="6-134-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">6-134-2
+								<input type="checkbox" name="fill" value="6-134-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="checkmarkGroup">
+							<h1>Potable</h1>
+							<label class="checkmarkContainer">8-123-1
+								<input type="checkbox" name="fill" value="8-123-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">8-123-2
+								<input type="checkbox" name="fill" value="8-123-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">7-134-1
+								<input type="checkbox" name="fill" value="7-134-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">7-134-2
+								<input type="checkbox" name="fill" value="7-134-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="checkmarkGroup">
+							<h1>Feedwater</h1>
+							<label class="checkmarkContainer">8-127-1
+								<input type="checkbox" name="fill" value="8-127-1" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+							<label class="checkmarkContainer">8-127-2
+								<input type="checkbox" name="fill" value="8-127-2" onclick="handleCheckButton(this)">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<div class="grid-item" style="-ms-grid-column: 3;-ms-grid-row: 2; border-top:none;">
+					<fieldset class="estimates">
+						<legend>Estimates</legend>
+						<div>
+							Flow Rate:
+							<input type="number" class="estimatesFlowRate" placeholder="0" oninput="handleTransferInput(this)">
+							GPM (Previous = <div class="nonEditBox" onclick="selectText(this)">0</div> GPM)
+						</div>
+						<div>
+							Time to <input type="number" class="estimatesLevelPercent" placeholder="90" min="0" max="100" value="90" oninput="handleTransferInput(this)">
+							% = <div class="nonEditBox">0</div> min = <div class="nonEditBox">0000</div>
+						</div>
+						<div>
+							Amount used from suction tank: <div class="nonEditBox">0</div> gal
+						</div>
+					</fieldset>
+					<fieldset class="estimates">
+						<legend>Finish</legend>
+						<div>
+							<label>
+								Duration:
+							</label>
+							<div class="nonEditBox" onclick="selectText(this)">0</div>
+							min =
+							<div class="nonEditBox" onclick="selectText(this)">0</div> hours
+						</div>
+						<div>
+							<label>
+								Flow Rate:
+							</label>
+							<div class="nonEditBox" onclick="selectText(this)">0</div>
+							GPM
+						</div>
+						<div>
+							<label>
+								Amount Added:
+							</label>
+							<div class="nonEditBox" onclick="selectText(this)">0</div>
+							gal
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div class="transferLog">
+				<fieldset class="logTextField">
+					<legend>Log Text</legend>
+					<div class="logTextBox" onclick="selectText(this)"></div>
+					<div class="logTextBox" onclick="selectText(this)"></div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
 </html>
+
